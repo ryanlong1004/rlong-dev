@@ -1,12 +1,7 @@
 <script setup>
 import '../assets/main.css'
 import { ref, onBeforeMount, toRaw } from 'vue';
-// defineProps({
-//   msg: {
-//     type: String,
-//     required: true
-//   }
-// })
+
 
 const forecast = ref([])
 const url = 'https://api.weather.gov/gridpoints/BGM/82,33/forecast'
@@ -72,7 +67,8 @@ a {
   color: white;
   font-family: 'pip-content' !important;
   font-size: .85em;
-  background-color: transparent;
+  background-color: gray;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   border-bottom: .25rem solid transparent;
 }
 </style>

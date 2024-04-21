@@ -54,7 +54,7 @@ const title = "rlong.dev"
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
     color: white;
-    border-bottom-color: rgba(255, 255, 255, .25);
+    border-bottom-color: white;
 }
 
 .nav-masthead .nav-link+.nav-link {
