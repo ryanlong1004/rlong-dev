@@ -20,7 +20,7 @@ async function fetchCurrentTemp() {
   const url = 'https://api.openweathermap.org/data/2.5/weather?lat=41.31&lon=-75.32&appid=b70600f4495d4665c49354e8081d5424'
   const response = await fetch(url)
   const data = await response.json();
-  currentTemp.value = `${Math.round(data.main.temp * 0.13)}`
+  currentTemp.value = Math.round((data.main.temp - 273.15) * 9 / 5 + 32) //TODO import as farenheit instead of converting
   weatherIcon.value = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
   console.log(weatherIcon.value)
 }
@@ -41,8 +41,8 @@ async function fetchCurrentTemp() {
 <template>
   <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
     aria-controls="collapseExample">
+    <img class="weather-icon" :src="weatherIcon">
     {{ currentTemp }}&deg;
-    <img :src="weatherIcon">
   </a>
 
   <div class="weather">
@@ -51,7 +51,7 @@ async function fetchCurrentTemp() {
         <div class="row g-0">
           <div class="col-md-4 text-center">
             <span class="align-middle" style="font-size: 4.5em; font-family: Gillies">
-              {{ currentTemp }}<img :src="weatherIcon">
+              <img :src="weatherIcon">{{ currentTemp }}
             </span>
           </div>
           <div class="col-md-8">
@@ -95,5 +95,10 @@ a {
   background-color: gray;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   border-bottom: .25rem solid transparent;
+}
+
+.weather-icon {
+  position: relative;
+  left: .5em;
 }
 </style>

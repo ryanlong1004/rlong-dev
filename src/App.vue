@@ -1,76 +1,70 @@
 <script setup>
-// import image from "./assets/icons/github-icon"
-import WeatherItem from "@/components/WeatherItem.vue"
+import HeaderItem from "@/components/HeaderItem.vue"
+import CoverItem from "@/components/CoverItem.vue"
+import FooterItem from "@/components/FooterItem.vue"
+import CardItem from "@/components/Longevity/CardItem.vue"
 
-const title = 'rlong.dev'
 </script>
 
 <template>
-
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand crt" href="#">{{ title }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">
-                  </a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <WeatherItem />
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <img src="@/assets/images/dog1.png" class="img-thumbnail photo" alt="dog">
+        <HeaderItem />
+        <CoverItem />
+        <FooterItem />
+        <CardItem />
+    </div>
 </template>
 
-<style scoped>
-.navbar {
-  background-color: #002f00 !important;
-  margin: 0;
-  padding: 0;
+<style>
+/* Links */
+a,
+a:focus,
+a:hover {
+    color: #fff;
 }
 
-.nav-item {
-  font-family: 'pip-content' !important;
-  text-transform: uppercase !important;
-  font-size: 1.5em;
+.photo {
+    position: fixed;
+    height: 15vh;
+    right: 10vw;
+    bottom: 10vh;
+    transform:
+        perspective(1000px) rotateX(14deg) rotateY(6deg) rotateZ(24deg);
+    box-shadow: 24px 16px 64px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
 }
 
-.navbar-brand {
-  color: #00EE00;
-  font-family: 'pip-title' !important;
-  font-size: 3.0em;
-  margin: 0 1 0 0;
-  padding: 0;
+.photo:hover {
+    transform:
+        perspective(1000px) rotateX(14deg) rotateY(6deg) rotateZ(24deg);
+    box-shadow: 0px 0px 5px 5px #29a6d5;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #333;
+    text-shadow: none;
+    /* Prevent inheritance from `body` */
+    background-color: #fff;
+    border: .05rem solid #fff;
+}
+
+.glow {
+    text-shadow: 0px 0px 25px #29a6d5;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.cover-container {
+    max-width: 42em;
 }
 </style>

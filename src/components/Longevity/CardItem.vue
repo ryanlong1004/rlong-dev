@@ -1,49 +1,28 @@
 <script setup>
-import { computed } from 'vue';
+import { ref, onMounted, toRaw } from 'vue';
+import { supabase } from '@/js/supabaseClient';
 
-/**
- * Adds leading zero to a single digit value if needed.
- * @param {number} value - The value to pad.
- * @returns {string} The padded value.
- */
-const pad = (value) => {
-    return ('0' + value).slice(-2);
+const social = ref([])
+
+async function getSocial() {
+    const { data } = await supabase.from('social').select()
+    social.value = data
+    console.debug(toRaw(social.value))
 }
 
-/**
- * Computes the current date and time formatted as MM/DD/YYYY HH:MM:SS.
- * @returns {string} The formatted current date and time.
- */
-const current_time = computed(() => {
-    // Get the current date and time
-    const currentdate = new Date();
-
-    // Format the date as MM/DD/YYYY
-    const date = `${pad(currentdate.getMonth() + 1)}/${pad(currentdate.getDate())}/${currentdate.getFullYear()}`
-
-    // Format the time as HH:MM:SS
-    const time = `${pad(currentdate.getHours())}:${pad(currentdate.getMinutes())}:${pad(currentdate.getSeconds())}`
-
-    // Combine the formatted date and time and return
-    return `${date} ${time}`;
-});
-
-const items = [
-    "Starting my day with a cup of coffee and some morning vibes! ☕️🌅 #GoodMorning #CoffeeLover",
-    "Just finished an intense workout session 💪 Feeling pumped and ready to take on the day! #FitnessGoals #WorkoutMotivation"
-]
-
-
+onMounted(() => {
+    getSocial();
+})
 
 </script>
 
 <template>
-    <div class="container list-group longevity">
-        <div v-for="(content, index) in items" :key="index" class="card mb-1 list-group-item" style="max-width: 540px;">
-            <div class="card-body">
+    <div class="longevity col-12 col-6">
+        <div v-for="(item, index) in social" :key="index" class="card mb-1 list-group-item">
+            <div class=" card-body">
                 <!-- <h5 class="card-title"></h5> -->
-                <p class="card-text"><small>{{ current_time }}</small></p>
-                <p class="card-text">{{ content }}</p>
+                <p class="card-text"><small>{{ item.timestamp }}</small></p>
+                <p class="card-text">{{ item.content }}</p>
             </div>
             <hr>
         </div>
@@ -56,7 +35,7 @@ const items = [
     position: fixed;
     left: 0;
     top: 0;
-    max-width: 20vw;
+    width: 20vw;
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
 }

@@ -9,7 +9,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
 import { createApp } from 'vue'
-import App from './App_1.vue'
+import App from './App.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faPhone)
