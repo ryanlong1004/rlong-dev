@@ -8,6 +8,9 @@ import { faCloudRain } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
+import { createApp } from 'vue'
+import App from './App_1.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faPhone)
 library.add(faCloudRain)
@@ -16,9 +19,6 @@ library.add(faCalendarDays)
 library.add(faLinkedin)
 
 
-import { createApp } from 'vue'
-import App from './App_1.vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

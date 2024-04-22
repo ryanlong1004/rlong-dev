@@ -1,7 +1,7 @@
 <script setup>
 const url = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0HA-h8kiHIB8ocD3mX_7JlxFUYejBsGkq6C5OSISFQVrhMZvxn0ESlXoPRRKA35Ms1gINR4JfO"
 
-const coverHeading = `Hi, I'm Ryan. I create solutions with software and technology.`
+const coverHeading = `Hi, I'm Ryan. I solve problems with software and technology.`
 
 const content = `
 Discover innovative solutions tailored to your needs with your local software development expert.

@@ -34,8 +34,18 @@ npm run build
 npm run lint
 ```
 
+### Great Examples
+
+https://www.shanemielke.com/
+
+### Ideas
+
+- Loading icon while images load
+
 ### Color Scheme
-* https://www.color-hex.com/color-palette/1017284
+
+- https://www.color-hex.com/color-palette/1017284
 
 ### Fonts
-* https://fallout.fandom.com/wiki/Fonts_in_the_Fallout_series
+
+- https://fallout.fandom.com/wiki/Fonts_in_the_Fallout_series
