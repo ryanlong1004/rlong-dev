@@ -54,4 +54,77 @@ onMounted(() => {
 hr {
     margin: 0px 0px 5px 0px;
 }
+
+/**********************************************************************************
+	MAGAZINES
+	**********************************************************************************/
+
+.mag {
+    display: inline-block;
+    width: 190px;
+    height: 280px;
+    margin: 20px 20px 0 20px;
+    padding: 0;
+    vertical-align: top;
+}
+
+.mag img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.mag-square img {
+    height: 100%;
+}
+
+.mag ul {
+    max-width: 155px;
+    list-style: none;
+    margin: 15px auto;
+    padding: 0;
+
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.mag li {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+
+    backface-visibility: hidden;
+    transform-origin: 0% 50% 0;
+}
+
+.mag .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page img,
+.cover img {
+    outline: 1px solid transparent;
+}
+
+.cover {
+    transform: rotateY(0deg) translateZ(0px);
+}
+
+.page1 {
+    transform: rotateY(20deg) translateZ(-1px);
+}
+
+.page2 {
+    transform: rotateY(30deg) translateZ(-2px);
+}
+
+.page3 {
+    transform: rotateY(40deg) translateZ(-3px);
+}
 </style>

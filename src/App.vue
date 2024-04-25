@@ -3,16 +3,17 @@ import HeaderItem from "@/components/HeaderItem.vue"
 import CoverItem from "@/components/CoverItem.vue"
 import FooterItem from "@/components/FooterItem.vue"
 import CardItem from "@/components/Longevity/CardItem.vue"
+import BookShelfItem from "@/components/bookshelf/BookShelfItem.vue";
 
 </script>
 
 <template>
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-        <img src="@/assets/images/dog1.png" class="img-thumbnail photo" alt="dog">
         <HeaderItem />
         <CoverItem />
+        <!-- <BookShelfItem /> -->
         <FooterItem />
-        <CardItem />
+        <!-- <CardItem /> -->
     </div>
 </template>
 
@@ -32,7 +33,9 @@ a:hover {
     transform:
         perspective(1000px) rotateX(14deg) rotateY(6deg) rotateZ(24deg);
     box-shadow: 24px 16px 64px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 2px;
+    border: 0;
+    /* border-radius: 2px; */
+    background-color: transparent;
 }
 
 .photo:hover {
@@ -66,5 +69,15 @@ a:hover {
 
 .cover-container {
     max-width: 42em;
+}
+
+.bookshelf {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+    max-height: 25vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+
 }
 </style>

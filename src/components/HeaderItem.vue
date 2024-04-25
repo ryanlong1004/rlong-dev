@@ -20,6 +20,9 @@ const title = "rlong.dev"
                     target="_BLANK">
                     <h2><font-awesome-icon icon="fa-brands fa-linkedin" /></h2>
                 </a>
+                <a title="Resume" class="nav-link" href="/resume_ryan_long.pdf" target="_BLANK">
+                    <h2><font-awesome-icon icon="fa-solid fa-file-signature" /></h2>
+                </a>
                 <a title="Current Weather" class="nav-link" href="#">
                     <WeatherItem />
                 </a>
