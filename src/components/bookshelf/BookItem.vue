@@ -34,7 +34,7 @@ const props = defineProps(['imagePath'])
 }
 
 .inner-book {
-    width: 8vw;
+    width: 5vw;
     max-width: 70vh;
 }
 

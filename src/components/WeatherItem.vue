@@ -155,15 +155,17 @@ async function fetchWeatherForecast() {
               <hr>
               <p class="card-text">{{ forecast?.detailedForecast }}</p>
               <hr>
-              <h6 class="card-subtitle">High {{ maxTemp }}&deg;
-                Low {{ minTemp }}&deg;</h6>
-
-              <h6 class="card-subtitle">{{ humidity }}%
-                humidity</h6>
-
-              <h6 class="card-subtitle">sunrise: {{ sunrise }}
-              </h6>
-              <h6 class="card-subtitle">sunset: {{ sunset }}
+              <h4 class="card-subtitle">
+                <span>{{ maxTemp }}&deg;/</span>
+                <span>{{ minTemp }}&deg; </span>
+                <span>{{ humidity }}%</span>
+              </h4>
+              <br>
+              <h6 class="card-subtitle">
+                <pre>
+                  sunrise: {{ sunrise }}
+                  sunset:  {{ sunset }}
+                </pre>
               </h6>
             </div>
           </div>

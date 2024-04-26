@@ -3,7 +3,7 @@ import HeaderItem from "@/components/HeaderItem.vue"
 import CoverItem from "@/components/CoverItem.vue"
 import FooterItem from "@/components/FooterItem.vue"
 import CardItem from "@/components/Longevity/CardItem.vue"
-import BookShelfItem from "@/components/bookshelf/BookShelfItem.vue";
+// import BookShelfItem from "@/components/bookshelf/BookShelfItem.vue";
 
 </script>
 
@@ -13,7 +13,7 @@ import BookShelfItem from "@/components/bookshelf/BookShelfItem.vue";
         <CoverItem />
         <!-- <BookShelfItem /> -->
         <FooterItem />
-        <!-- <CardItem /> -->
+        <CardItem />
     </div>
 </template>
 
