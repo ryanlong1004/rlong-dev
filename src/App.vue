@@ -13,7 +13,7 @@ import CardItem from "@/components/Longevity/CardItem.vue"
         <CoverItem />
         <!-- <BookShelfItem /> -->
         <FooterItem />
-        <CardItem />
+        <!-- <CardItem /> -->
     </div>
 </template>
 
