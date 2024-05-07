@@ -9,8 +9,8 @@ const intervalId = ref(null)
 const refreshInterval = 60 * 1000;
 
 onBeforeMount(async () => {
-  fetchCurrentWeather();
-  fetchWeatherForecast();
+  fetchCurrentWeatherStats();
+  fetchCurrentWeatherForecast();
   setupIntervals();
 
 })
@@ -20,8 +20,8 @@ onUnmounted(() => {
 })
 
 function setupIntervals() {
-  intervalId.value = setInterval(fetchCurrentWeather, refreshInterval);
-  intervalId.value = setInterval(fetchWeatherForecast, refreshInterval * 60);
+  intervalId.value = setInterval(fetchCurrentWeatherStats, refreshInterval);
+  intervalId.value = setInterval(fetchCurrentWeatherForecast, refreshInterval * 60);
 }
 
 // Function to convert temperature in Kelvin to Fahrenheit
@@ -83,7 +83,7 @@ const weatherIcon = computed(() => {
 /**
  * Fetches current weather conditions from the OpenWeatherMap API.
  */
-async function fetchCurrentWeather() {
+async function fetchCurrentWeatherStats() {
   try {
     console.debug(`Fetching current weather conditions`);
 
@@ -107,7 +107,7 @@ async function fetchCurrentWeather() {
 /**
  * Fetches weather forecast data from the National Weather Service API.
  */
-async function fetchWeatherForecast() {
+async function fetchCurrentWeatherForecast() {
   try {
     console.debug(`Fetching weather forecast`);
 
@@ -140,10 +140,10 @@ async function fetchWeatherForecast() {
 
   <div class="weather">
     <div class="collapse" id="collapseExample">
-      <div class="card tv crt" style="max-width: 540px;">
+      <div class="card tv crt">
         <div class="row g-0">
           <div class="col-md-4">
-            <div class="align-middle" style="font-size: 4.5em; font-family: Gillies">
+            <div class="temp align-middle">
               {{ currentTemp }}&deg;
               <img :src="weatherIcon" :class="[weatherIcon ? shown : hidden, 'weather-icon']">
               <div :class="[weatherIcon ? 'hidden' : 'shown', 'spinner-border spinner-border-sm']" role="status"></div>
@@ -190,6 +190,7 @@ a {
   bottom: 1em;
 }
 
+
 .tv {
   color: white;
   font-family: 'pip-content' !important;
@@ -199,13 +200,12 @@ a {
   border-bottom: .25rem solid transparent;
 }
 
-.weather-icon {
-  position: relative;
-  left: -0.5em;
+.temp {
+  font-size: 4.5em;
+  font-family: "Gillies";
 }
 
 .weather .weather-icon {
-  /* position: relative; */
   width: 2em;
   left: 0;
   top: -.5em;
@@ -218,5 +218,61 @@ a {
 .hidden {
   visibility: hidden;
   display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .weather .weather-icon {
+    width: 1em;
+    left: 0;
+    top: -.5em;
+  }
+
+  .tv {
+    max-width: 80vw;
+    font-size: .65em;
+  }
+
+  .card-subtitle {
+    font-size: 1.1em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  weather .weather-icon {
+    /* position: relative; */
+    width: 1em;
+    left: 0;
+    top: -.5em;
+  }
+
+  .tv {
+    max-width: 70vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  weather .weather-icon {
+    /* position: relative; */
+    width: 1em;
+    left: 0;
+    top: -.5em;
+  }
+
+  .tv {
+    max-width: 60vw;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .tv {
+    max-width: 45vw;
+  }
 }
 </style>
