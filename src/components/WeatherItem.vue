@@ -131,8 +131,8 @@ async function fetchCurrentWeatherForecast() {
 </script>
 
 <template>
-  <a data-bs-toggle="collapse" style="color: white; font-size: 1.5em;" href="#collapseExample" role="button"
-    aria-expanded="false" aria-controls="collapseExample">
+  <a data-bs-toggle="collapse" class="menu-temp" href="#collapseExample" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
     {{ currentTemp }}&deg;
     <img :class="[weatherIcon ? 'shown' : 'hidden', 'weather-icon']" :src="weatherIcon">
     <div :class="[weatherIcon ? 'hidden' : 'shown', 'spinner-border spinner-border-sm']" role="status"></div>
@@ -198,6 +198,12 @@ a {
   background-color: gray;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   border-bottom: .25rem solid transparent;
+}
+
+.menu-temp {
+  display: flex;
+  color: white;
+  font-size: 1.5em;
 }
 
 .temp {
@@ -272,7 +278,7 @@ a {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .tv {
-    max-width: 45vw;
+    max-width: 40vw;
   }
 }
 </style>
