@@ -1,16 +1,15 @@
 <script setup>
-import HeaderItem from "@/components/HeaderItem.vue"
 import CoverItem from "@/components/CoverItem.vue"
 import FooterItem from "@/components/FooterItem.vue"
-import CardItem from "@/components/Longevity/CardItem.vue"
+import PortfolioItem from "./components/portfolio/PortfolioItem.vue";
 // import BookShelfItem from "@/components/bookshelf/BookShelfItem.vue";
 
 </script>
 
 <template>
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-        <HeaderItem />
+    <div class="wrapper">
         <CoverItem />
+        <PortfolioItem />
         <!-- <BookShelfItem /> -->
         <FooterItem />
         <!-- <CardItem /> -->
@@ -23,6 +22,7 @@ a,
 a:focus,
 a:hover {
     color: #fff;
+    text-decoration: none;
 }
 
 .photo {
@@ -65,10 +65,6 @@ a:hover {
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
-}
-
-.cover-container {
-    max-width: 42em;
 }
 
 .bookshelf {
