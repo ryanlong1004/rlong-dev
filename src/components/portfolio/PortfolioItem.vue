@@ -6,12 +6,12 @@ const data = [{
     text: "An application I built for my son to curate his favorite YouTube videos and share them with his teachers.",
     technologies: "Svelte, HTML, JavaScript, YouTube API, CSS, Netlify, Bootstrap",
     link: "https://sam-tube.netlify.app/",
-    imageLink: "/src/assets/images/portfolio/sam-tube-ss.png"
+    imageLink: "src/assets/images/portfolio/sam-tube-ss.png"
 }, {
     title: "Spot Network",
     text: "An application to create communication between first responders, meteorologiests and the public.",
     technologies: "PHP, Symfony, Python, VueJS",
-    imageLink: "/src/assets/images/portfolio/spot.png",
+    imageLink: "src/assets/images/portfolio/spot.png",
     link: "https://www.weather.gov/spot/"
 }]
 
