@@ -1,17 +1,20 @@
 <script setup>
 import ProjectItem from './ProjectItem.vue';
 
+import img_spot from '@/assets/images/portfolio/spot.png'
+import img_samtube from '@/assets/images/portfolio/sam-tube-ss.png'
+
 const data = [{
     title: "SamTube",
     text: "An application I built for my son to curate his favorite YouTube videos and share them with his teachers.",
     technologies: "Svelte, HTML, JavaScript, YouTube API, CSS, Netlify, Bootstrap",
     link: "https://sam-tube.netlify.app/",
-    imageLink: "./assets/images/portfolio/sam-tube-ss.png"
+    imageLink: img_samtube
 }, {
     title: "Spot Network",
     text: "An application to create communication between first responders, meteorologiests and the public.",
     technologies: "PHP, Symfony, Python, VueJS",
-    imageLink: "./assets/images/portfolio/spot.png",
+    imageLink: img_spot,
     link: "https://www.weather.gov/spot/"
 }]
 
