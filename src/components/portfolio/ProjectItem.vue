@@ -23,6 +23,18 @@ const props = defineProps(['data'])
 }
 
 .item {
-    padding: 1em;
+    padding: .25em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .item {
+        width: 95vw !important;
+        max-width: 100vw !important;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>

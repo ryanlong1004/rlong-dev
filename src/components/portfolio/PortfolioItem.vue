@@ -53,4 +53,14 @@ const data = [{
 .card-text {
     text-align: left;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .portfolio {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 </style>
