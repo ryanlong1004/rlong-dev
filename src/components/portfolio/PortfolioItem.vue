@@ -43,15 +43,17 @@ const data = [{
 .item {
     display: flex;
     max-width: 20vw;
+    text-shadow: none !important;
 }
 
 .card-text,
 .card-title {
-    text-shadow: none;
+    text-shadow: none !important;
 }
 
 .card-text {
     text-align: left;
+    text-shadow: none !important
 }
 
 /* Extra small devices (phones, 600px and down) */
