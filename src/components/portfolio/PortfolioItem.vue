@@ -15,7 +15,7 @@ const data = [{
     text: "An application to create communication between first responders, meteorologiests and the public.",
     technologies: "PHP, Symfony, Python, VueJS",
     imageLink: img_spot,
-    link: "https://preview-spot.weather.gov/"
+    link: "https://spot.weather.gov/"
 }]
 
 </script>
