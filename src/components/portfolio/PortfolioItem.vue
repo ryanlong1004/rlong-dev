@@ -16,6 +16,11 @@ const data = [{
     technologies: "PHP, Symfony, Python, VueJS",
     imageLink: img_spot,
     link: "https://spot.weather.gov/"
+}, {
+    title: "Wasabi AIR",
+    text: "Wasabi AIR is a cloud-based storage service provided by Wasabi, designed to offer fast, reliable, and cost-effective storage solutions. It focuses on delivering low-latency access to stored data, making it ideal for applications requiring frequent data retrieval. Wasabi AIR leverages Wasabi's hot cloud storage technology to provide scalable storage options, often at a lower cost than traditional cloud storage providers, without sacrificing performance or security.",
+    imageLink: "https://wasabi.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1019449%2F811x613%2F173e91969b%2Fwasabi-air-ui-logo.png%2Fm%2F1024x0%2Ffilters%3Aquality(70)&w=1920&q=75",
+    link: "https://wasabi.com/cloud-object-storage/wasabi-air"
 }]
 
 </script>
