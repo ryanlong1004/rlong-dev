@@ -138,42 +138,43 @@ async function fetchCurrentWeatherForecast() {
     <div :class="[weatherIcon ? 'hidden' : 'shown', 'spinner-border spinner-border-sm']" role="status"></div>
   </a>
 
-  <div class="weather">
-    <div class="collapse" id="collapseExample">
-      <div class="card tv crt">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <div class="temp align-middle">
-              {{ currentTemp }}&deg;
-              <img :src="weatherIcon" :class="[weatherIcon ? shown : hidden, 'weather-icon']">
-              <div :class="[weatherIcon ? 'hidden' : 'shown', 'spinner-border spinner-border-sm']" role="status"></div>
+  <Teleport to="body">
+    <div class="weather">
+      <div class="collapse" id="collapseExample">
+        <div class="card tv crt">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <div class="temp align-middle">
+                {{ currentTemp }}&deg;
+                <img :src="weatherIcon" :class="[weatherIcon ? shown : hidden, 'weather-icon']">
+                <div :class="[weatherIcon ? 'hidden' : 'shown', 'spinner-border spinner-border-sm']" role="status"></div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body text-start">
-              <h5 class="card-title">{{ forecast?.name }} </h5>
-              <hr>
-              <p class="card-text">{{ forecast?.detailedForecast }}</p>
-              <hr>
-              <h4 class="card-subtitle">
-                <span>{{ maxTemp }}&deg;/</span>
-                <span>{{ minTemp }}&deg; </span>
-                <span>{{ humidity }}%</span>
-              </h4>
-              <br>
-              <h6 class="card-subtitle">
-                <pre>
+            <div class="col-md-8">
+              <div class="card-body text-start">
+                <h5 class="card-title">{{ forecast?.name }} </h5>
+                <hr>
+                <p class="card-text">{{ forecast?.detailedForecast }}</p>
+                <hr>
+                <h4 class="card-subtitle">
+                  <span>{{ maxTemp }}&deg;/</span>
+                  <span>{{ minTemp }}&deg; </span>
+                  <span>{{ humidity }}%</span>
+                </h4>
+                <br>
+                <h6 class="card-subtitle">
+                  <pre>
                   sunrise: {{ sunrise }}
                   sunset:  {{ sunset }}
                 </pre>
-              </h6>
+                </h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+  </Teleport>
 </template>
 
 <style scoped>
@@ -184,8 +185,8 @@ a {
 
 .weather {
   float: inline-end;
-  position: absolute;
-  z-index: 1000;
+  position: fixed;
+  z-index: 999;
   right: 1em;
   bottom: 1em;
 }
