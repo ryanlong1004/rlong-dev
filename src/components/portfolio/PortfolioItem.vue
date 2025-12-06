@@ -26,7 +26,7 @@ const data = [{
 </script>
 
 <template>
-    <div class="container-fluid">
+    <div id="projects" class="container-fluid">
         <div class="portfolio">
             <div v-for="item in data" :key="item.title">
                 <ProjectItem :data="item" />

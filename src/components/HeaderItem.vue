@@ -1,5 +1,4 @@
 <script setup>
-import WeatherItem from "@/components/WeatherItem.vue"
 const title = "rlong.dev"
 </script>
 
@@ -23,9 +22,6 @@ const title = "rlong.dev"
                 <a title="Resume" class="nav-link" href="/resume_ryan_long.pdf" target="_BLANK">
                     <h1><font-awesome-icon class="shimmy" icon="fa-solid fa-file-signature" /></h1>
                 </a>
-                <a title="Current Weather" class="nav-link" href="#">
-                    <WeatherItem />
-                </a>
             </nav>
         </div>
     </header>
@@ -39,18 +35,18 @@ const title = "rlong.dev"
     right: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(135deg, rgba(30, 30, 35, 0.98) 0%, rgba(45, 45, 50, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(107, 209, 11, 0.2);
-    padding: 0.5rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.3rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     overflow: visible;
 }
 
 .masthead .inner {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,17 +55,17 @@ const title = "rlong.dev"
 .masthead-brand {
     margin-bottom: 0;
     font-family: 'pip-title' !important;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1;
     color: #fff;
-    text-shadow: 0 2px 8px rgba(107, 209, 11, 0.3);
+    text-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
     letter-spacing: 0.05em;
     transition: all 0.3s ease;
 }
 
 .masthead-brand:hover {
-    color: rgb(107, 209, 11);
-    text-shadow: 0 2px 12px rgba(107, 209, 11, 0.6);
+    color: rgb(16, 185, 129);
+    text-shadow: 0 2px 12px rgba(16, 185, 129, 0.6);
 }
 
 .nav {
@@ -79,12 +75,12 @@ const title = "rlong.dev"
 }
 
 .nav-masthead .nav-link {
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0.5rem;
     font-weight: 700;
     color: rgba(255, 255, 255, .6);
-    font-size: 1.1em;
+    font-size: 1em;
     background-color: transparent;
-    border-radius: 8px;
+    border-radius: 6px;
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -93,8 +89,8 @@ const title = "rlong.dev"
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 8px;
-    background: rgba(107, 209, 11, 0.1);
+    border-radius: 6px;
+    background: rgba(16, 185, 129, 0.1);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -123,9 +119,9 @@ const title = "rlong.dev"
 }
 
 .shimmy:hover {
-    color: rgb(107, 209, 11);
+    color: rgb(16, 185, 129);
     transform: scale(1.15) rotate(-5deg);
-    filter: drop-shadow(0 4px 8px rgba(107, 209, 11, 0.4));
+    filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.4));
 }
 
 @media (max-width: 48em) {
