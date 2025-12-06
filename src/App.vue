@@ -18,7 +18,7 @@ import FooterItem from "@/components/FooterItem.vue"
 
 <style>
 .app-wrapper {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 /* Links */
@@ -30,11 +30,25 @@ a:hover {
 }
 
 /* Utility classes */
-.mr-2 { margin-right: 0.5rem; }
-.ml-2 { margin-left: 0.5rem; }
-.w-4 { width: 1rem; }
-.h-4 { height: 1rem; }
-.inline { display: inline; }
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.w-4 {
+    width: 1rem;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.inline {
+    display: inline;
+}
 
 /* Custom default button */
 .btn-secondary,
