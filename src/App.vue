@@ -1,22 +1,26 @@
 <script setup>
-import CoverItem from "@/components/CoverItem.vue"
-import FooterItem from "@/components/FooterItem.vue"
+import HeaderItem from "@/components/HeaderItem.vue"
+import HeroSection from "@/components/sections/HeroSection.vue"
+import AboutSection from "@/components/sections/AboutSection.vue"
 import PortfolioItem from "./components/portfolio/PortfolioItem.vue";
-// import BookShelfItem from "@/components/bookshelf/BookShelfItem.vue";
-
+import FooterItem from "@/components/FooterItem.vue"
 </script>
 
 <template>
-    <div class="wrapper">
-        <CoverItem />
+    <div class="app-wrapper">
+        <HeaderItem />
+        <HeroSection />
+        <AboutSection />
         <PortfolioItem />
-        <!-- <BookShelfItem /> -->
         <FooterItem />
-        <!-- <CardItem /> -->
     </div>
 </template>
 
 <style>
+.app-wrapper {
+  min-height: 100vh;
+}
+
 /* Links */
 a,
 a:focus,
@@ -25,28 +29,12 @@ a:hover {
     text-decoration: none;
 }
 
-.photo {
-    position: fixed;
-    height: 15vh;
-    right: 10vw;
-    bottom: 10vh;
-    transform:
-        perspective(1000px) rotateX(14deg) rotateY(6deg) rotateZ(24deg);
-    box-shadow: 24px 16px 64px 0 rgba(0, 0, 0, 0.08);
-    border: 0;
-    /* border-radius: 2px; */
-    background-color: transparent;
-}
-
-.photo:hover {
-    transform:
-        perspective(1000px) rotateX(14deg) rotateY(6deg) rotateZ(24deg);
-    box-shadow: 0px 0px 5px 5px #29a6d5;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
+/* Utility classes */
+.mr-2 { margin-right: 0.5rem; }
+.ml-2 { margin-left: 0.5rem; }
+.w-4 { width: 1rem; }
+.h-4 { height: 1rem; }
+.inline { display: inline; }
 
 /* Custom default button */
 .btn-secondary,
@@ -54,26 +42,7 @@ a:hover {
 .btn-secondary:focus {
     color: #333;
     text-shadow: none;
-    /* Prevent inheritance from `body` */
     background-color: #fff;
     border: .05rem solid #fff;
-}
-
-.glow {
-    text-shadow: 0px 0px 25px #29a6d5;
-    -moz-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-}
-
-.bookshelf {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
-    max-height: 25vh;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-
 }
 </style>
