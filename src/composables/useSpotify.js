@@ -33,6 +33,14 @@ export function useSpotify() {
         try {
             const response = await fetch('/.netlify/functions/spotify-now-playing');
 
+            // If function doesn't exist (404) or not configured, treat as not playing
+            if (response.status === 404 || response.status === 500) {
+                currentTrack.value = null;
+                isPlaying.value = false;
+                loading.value = false;
+                return;
+            }
+
             if (!response.ok) {
                 throw new Error(`Spotify API error: ${response.status}`);
             }
@@ -62,8 +70,11 @@ export function useSpotify() {
                 timestamp: Date.now()
             }));
         } catch (err) {
-            error.value = err.message;
-            console.error('Spotify API Error:', err);
+            // Network errors or function not available - treat as not playing
+            console.log('Spotify integration not configured or unavailable:', err.message);
+            currentTrack.value = null;
+            isPlaying.value = false;
+            error.value = null; // Don't show error, just show idle state
         } finally {
             loading.value = false;
         }

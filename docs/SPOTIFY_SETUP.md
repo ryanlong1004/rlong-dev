@@ -24,6 +24,7 @@ This document explains how to set up the Spotify "Now Playing" integration.
 ### 2. Get Authorization Code
 
 1. Visit this URL (replace `YOUR_CLIENT_ID`):
+
 ```
 https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=http://localhost:3000&scope=user-read-currently-playing
 ```
@@ -67,6 +68,7 @@ The Spotify integration will now work in production!
 For local testing:
 
 1. Create a `.env` file in the project root:
+
 ```env
 SPOTIFY_CLIENT_ID=your_client_id
 SPOTIFY_CLIENT_SECRET=your_client_secret
