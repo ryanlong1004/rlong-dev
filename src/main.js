@@ -1,6 +1,5 @@
 import './assets/tailwind.css'
 import './assets/main.css'
-import './assets/cover.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 // Fontawesome Icons
