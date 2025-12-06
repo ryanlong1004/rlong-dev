@@ -13,7 +13,7 @@ Discover innovative solutions tailored to your needs with your local software de
 <template>
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <HeaderItem />
-        <div class="wrapper" style="padding-top: 80px;">
+        <div class="wrapper" style="padding-top: 50px;">
             <main role="main" class="inner cover">
                 <h1 class="cover-heading">{{ coverHeading }}</h1>
                 <p class="lead">{{ content }}</p>
