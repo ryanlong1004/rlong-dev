@@ -1,5 +1,4 @@
 <script setup>
-import WeatherItem from "@/components/WeatherItem.vue"
 const title = "rlong.dev"
 </script>
 
@@ -22,9 +21,6 @@ const title = "rlong.dev"
                 </a>
                 <a title="Resume" class="nav-link" href="/resume_ryan_long.pdf" target="_BLANK">
                     <h1><font-awesome-icon class="shimmy" icon="fa-solid fa-file-signature" /></h1>
-                </a>
-                <a title="Current Weather" class="nav-link" href="#">
-                    <WeatherItem />
                 </a>
             </nav>
         </div>
