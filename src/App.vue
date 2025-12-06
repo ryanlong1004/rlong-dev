@@ -3,7 +3,7 @@ import HeaderItem from "@/components/HeaderItem.vue"
 import HeroSection from "@/components/sections/HeroSection.vue"
 import AboutSection from "@/components/sections/AboutSection.vue"
 import GitHubSection from "@/components/sections/GitHubSection.vue"
-import PortfolioItem from "./components/portfolio/PortfolioItem.vue";
+import ProjectsSection from "@/components/sections/ProjectsSection.vue"
 import FooterItem from "@/components/FooterItem.vue"
 </script>
 
@@ -13,7 +13,7 @@ import FooterItem from "@/components/FooterItem.vue"
         <HeroSection />
         <AboutSection />
         <GitHubSection />
-        <PortfolioItem />
+        <ProjectsSection />
         <FooterItem />
     </div>
 </template>
