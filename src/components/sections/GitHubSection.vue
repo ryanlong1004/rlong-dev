@@ -29,21 +29,28 @@ const { repos, user, loading, error } = useGitHub();
                 </div>
             </div>
 
-            <!-- Contribution Graph Placeholder -->
+            <!-- Contribution Graph -->
             <div class="contribution-section">
                 <h3 class="subsection-title">Contribution Activity</h3>
-                <a :href="`https://github.com/ryanlong1004`" target="_blank" class="contribution-graph">
-                    <div class="graph-placeholder">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="github-icon">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                <div class="contribution-wrapper">
+                    <img 
+                        src="https://ghchart.rshah.org/10b981/ryanlong1004" 
+                        alt="GitHub Contribution Chart"
+                        class="contribution-chart"
+                    />
+                    <a 
+                        href="https://github.com/ryanlong1004" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="github-profile-link"
+                    >
+                        <font-awesome-icon :icon="['fab', 'github']" class="github-icon" />
+                        <span>View Full Profile on GitHub</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M3.75 2h3.5a.75.75 0 010 1.5h-3.5a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25v-3.5a.75.75 0 011.5 0v3.5A1.75 1.75 0 0112.25 14h-8.5A1.75 1.75 0 012 12.25v-8.5C2 2.784 2.784 2 3.75 2zm6.854-1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1z"/>
                         </svg>
-                        <div class="graph-text">
-                            <p class="graph-message">View full contribution graph on GitHub</p>
-                            <p class="graph-hint">Click to see detailed activity →</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
 
             <!-- Recent Repositories -->
@@ -182,55 +189,54 @@ const { repos, user, loading, error } = useGitHub();
     text-align: center;
 }
 
-.contribution-graph {
-    display: block;
+.contribution-wrapper {
     background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 1rem;
-    padding: 3rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-}
-
-.contribution-graph:hover {
-    border-color: rgb(16, 185, 129);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
-    transform: translateY(-4px);
-}
-
-.graph-placeholder {
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contribution-wrapper:hover {
+    border-color: rgb(16, 185, 129);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+}
+
+.contribution-chart {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 1rem;
+}
+
+.github-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgb(16, 185, 129);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.github-profile-link:hover {
+    border-color: rgb(16, 185, 129);
+    background: rgba(16, 185, 129, 0.1);
+    transform: translateY(-2px);
 }
 
 .github-icon {
-    width: 64px;
-    height: 64px;
-    color: rgba(16, 185, 129, 0.8);
-}
-
-.graph-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.graph-message {
     font-size: 1.25rem;
-    font-weight: 600;
-    color: #fff;
-    margin: 0;
-}
-
-.graph-hint {
-    font-size: 0.875rem;
-    color: rgba(241, 245, 249, 0.6);
-    margin: 0;
 }
 
 .repos-section {
@@ -314,8 +320,17 @@ const { repos, user, loading, error } = useGitHub();
         gap: 2rem;
     }
 
-    .contribution-graph {
-        padding: 2rem 1rem;
+    .contribution-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
+    .contribution-chart {
+        padding: 0.5rem;
+    }
+
+    .github-profile-link {
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
     }
 }
 </style>

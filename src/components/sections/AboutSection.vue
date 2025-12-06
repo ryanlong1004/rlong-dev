@@ -1,5 +1,6 @@
 <script setup>
 import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import SpotifyCard from '@/components/ui/SpotifyCard.vue';
 
 const { isVisible, targetRef } = useScrollAnimation(0.3);
 
@@ -46,6 +47,11 @@ const stats = [
                     <div class="stat-value">{{ stat.value }}</div>
                     <div class="stat-label">{{ stat.label }}</div>
                 </div>
+            </div>
+
+            <!-- Spotify Now Playing -->
+            <div class="spotify-section">
+                <SpotifyCard />
             </div>
         </div>
     </section>
@@ -203,5 +209,12 @@ const stats = [
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.spotify-section {
+    margin-top: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>
