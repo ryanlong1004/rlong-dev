@@ -32,9 +32,6 @@ const title = "rlong.dev"
 </template>
 
 <style scoped>
-/*
- * Header
- */
 .masthead {
     position: fixed;
     top: 0;
@@ -42,11 +39,11 @@ const title = "rlong.dev"
     right: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(51, 51, 51, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(30, 30, 35, 0.98) 0%, rgba(45, 45, 50, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107, 209, 11, 0.2);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     overflow: visible;
 }
 
@@ -62,28 +59,54 @@ const title = "rlong.dev"
 .masthead-brand {
     margin-bottom: 0;
     font-family: 'pip-title' !important;
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(107, 209, 11, 0.3);
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.masthead-brand:hover {
+    color: rgb(107, 209, 11);
+    text-shadow: 0 2px 12px rgba(107, 209, 11, 0.6);
 }
 
 .nav {
     align-items: center;
     margin: 0;
+    gap: 0.25rem;
 }
 
 .nav-masthead .nav-link {
-    padding: 0.5rem 0.75rem;
+    padding: 0.4rem 0.6rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, .5);
-    font-size: 1.25em;
+    color: rgba(255, 255, 255, .6);
+    font-size: 1.1em;
     background-color: transparent;
-    border-bottom: .25rem solid transparent;
-    transition: all 0.2s ease;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-masthead .nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: rgba(107, 209, 11, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-masthead .nav-link:hover::before {
+    opacity: 1;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
     color: white;
+    transform: translateY(-2px);
 }
 
 .nav-masthead .nav-link h1 {
@@ -91,43 +114,38 @@ const title = "rlong.dev"
     font-size: 1em;
 }
 
-.nav-masthead .nav-link+.nav-link {
-    margin-left: 0.5rem;
-}
-
 .nav-masthead .active {
     color: #fff;
-    border-bottom-color: #fff;
+}
+
+.shimmy {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .shimmy:hover {
     color: rgb(107, 209, 11);
-    transform:
-        perspective(1000px) rotateX(14deg) rotateY(6deg) rotateZ(24deg);
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 4px 8px rgba(107, 209, 11, 0.4));
 }
 
 @media (max-width: 48em) {
+    .masthead {
+        padding: 0.4rem 0;
+    }
+
     .masthead .inner {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.6rem;
         padding: 0 1rem;
     }
 
     .masthead-brand {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     .nav-masthead .nav-link {
-        font-size: 1em;
-        padding: 0.5rem;
-    }
-
-    .nav-masthead .nav-link+.nav-link {
-        margin-left: 0.25rem;
+        font-size: 0.95em;
+        padding: 0.3rem 0.5rem;
     }
 }
 
