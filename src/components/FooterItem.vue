@@ -1,6 +1,11 @@
 <template>
     <footer class="footer">
         <div class="footer-container">
+            <!-- Spotify Now Playing -->
+            <div class="spotify-section">
+                <SpotifyCard />
+            </div>
+
             <div class="footer-content">
                 <!-- Brand Section -->
                 <div class="footer-section">
@@ -54,6 +59,8 @@
 </template>
 
 <script setup>
+import SpotifyCard from '@/components/ui/SpotifyCard.vue';
+
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -72,9 +79,16 @@ const scrollToTop = () => {
     margin: 0 auto;
 }
 
+.spotify-section {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+}
+
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin-bottom: 2.5rem;
 }
@@ -189,6 +203,11 @@ const scrollToTop = () => {
 @media (max-width: 768px) {
     .footer {
         padding: 2rem 1.5rem 1rem;
+    }
+
+    .spotify-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
     }
 
     .footer-content {

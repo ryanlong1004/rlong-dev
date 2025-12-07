@@ -3,6 +3,7 @@ import HeaderItem from "@/components/HeaderItem.vue"
 import HeroSection from "@/components/sections/HeroSection.vue"
 import OverviewSection from "@/components/sections/OverviewSection.vue"
 import AboutSection from "@/components/sections/AboutSection.vue"
+import TechStackSection from "@/components/sections/TechStackSection.vue"
 import GitHubSection from "@/components/sections/GitHubSection.vue"
 import ProjectsSection from "@/components/sections/ProjectsSection.vue"
 import FooterItem from "@/components/FooterItem.vue"
@@ -14,6 +15,7 @@ import FooterItem from "@/components/FooterItem.vue"
         <HeroSection />
         <OverviewSection />
         <AboutSection />
+        <TechStackSection />
         <GitHubSection />
         <ProjectsSection />
         <FooterItem />
