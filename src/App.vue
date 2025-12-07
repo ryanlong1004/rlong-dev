@@ -1,6 +1,7 @@
 <script setup>
 import HeaderItem from "@/components/HeaderItem.vue"
 import HeroSection from "@/components/sections/HeroSection.vue"
+import OverviewSection from "@/components/sections/OverviewSection.vue"
 import AboutSection from "@/components/sections/AboutSection.vue"
 import GitHubSection from "@/components/sections/GitHubSection.vue"
 import ProjectsSection from "@/components/sections/ProjectsSection.vue"
@@ -11,6 +12,7 @@ import FooterItem from "@/components/FooterItem.vue"
     <div class="app-wrapper">
         <HeaderItem />
         <HeroSection />
+        <OverviewSection />
         <AboutSection />
         <GitHubSection />
         <ProjectsSection />

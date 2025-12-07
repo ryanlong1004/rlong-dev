@@ -1,4 +1,6 @@
 <script setup>
+import SpotifyNavbar from '@/components/ui/SpotifyNavbar.vue';
+
 const title = "rlong.dev"
 </script>
 
@@ -7,6 +9,9 @@ const title = "rlong.dev"
         <div class="inner">
             <h3 class="masthead-brand">{{ title }}</h3>
             <nav class="nav nav-masthead justify-content-center">
+                <div class="spotify-nav-wrapper">
+                    <SpotifyNavbar />
+                </div>
                 <a title="Schedule time with Ryan" class="nav-link"
                     href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0HA-h8kiHIB8ocD3mX_7JlxFUYejBsGkq6C5OSISFQVrhMZvxn0ESlXoPRRKA35Ms1gINR4JfO"
                     target="_BLANK">
@@ -152,6 +157,18 @@ const title = "rlong.dev"
 
     .nav-masthead {
         float: none;
+    }
+}
+
+.spotify-nav-wrapper {
+    margin-right: 1rem;
+}
+
+@media (max-width: 48em) {
+    .spotify-nav-wrapper {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
 }
 </style>

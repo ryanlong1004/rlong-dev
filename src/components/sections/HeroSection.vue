@@ -16,6 +16,12 @@ const scrollToProjects = () => {
 
 <template>
     <section id="hero" class="hero-section" ref="targetRef">
+        <div class="hero-background">
+            <div class="grid-pattern"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
         <div class="hero-content" :class="{ 'fade-in': isVisible }">
             <h1 class="hero-title">Ryan Long</h1>
             <p class="hero-tagline">
@@ -54,10 +60,90 @@ const scrollToProjects = () => {
     justify-content: center;
     position: relative;
     padding: 0 2rem;
-    background: linear-gradient(135deg,
-            rgba(15, 23, 42, 0.95) 0%,
-            rgba(30, 41, 59, 0.9) 50%,
-            rgba(15, 23, 42, 0.95) 100%);
+    overflow: hidden;
+    background: rgb(15, 23, 42);
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%);
+    top: -250px;
+    right: -200px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    bottom: -150px;
+    left: -150px;
+    animation-delay: -7s;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -14s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    75% {
+        transform: translate(40px, 10px) scale(1.05);
+    }
 }
 
 .hero-content {
@@ -66,6 +152,8 @@ const scrollToProjects = () => {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content.fade-in {
@@ -129,26 +217,30 @@ const scrollToProjects = () => {
 
 .btn-primary {
     background: rgb(16, 185, 129);
-    color: #0f172a;
+    color: rgb(15, 23, 42);
     box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    cursor: pointer;
 }
 
 .btn-primary:hover {
     background: rgb(5, 150, 105);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.6);
 }
 
 .btn-secondary {
     background: transparent;
     color: rgb(16, 185, 129);
     border-color: rgb(16, 185, 129);
+    cursor: pointer;
 }
 
 .btn-secondary:hover {
-    background: rgba(16, 185, 129, 0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+    background: rgb(16, 185, 129);
+    color: rgb(15, 23, 42);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
 }
 
 .scroll-indicator {

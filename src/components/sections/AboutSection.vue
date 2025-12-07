@@ -11,7 +11,7 @@ const bio = {
 
 const stats = [
     {
-        value: '5+',
+        value: '15+',
         label: 'Years Experience',
         icon: 'fa-solid fa-code'
     },

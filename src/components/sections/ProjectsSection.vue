@@ -4,7 +4,7 @@ import { useScrollAnimation } from '@/composables/useScrollAnimation'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 import { projects } from '@/data/projects'
 
-const { elementRef, isVisible } = useScrollAnimation()
+const { isVisible, targetRef } = useScrollAnimation()
 const showAll = ref(false)
 
 const featuredProjects = computed(() =>
@@ -27,11 +27,12 @@ const toggleProjects = () => {
 <template>
     <section id="projects" class="projects-section">
         <div class="container">
-            <div ref="elementRef" class="section-header" :class="{ 'animate': isVisible }">
+            <div ref="targetRef" class="section-header" :class="{ 'animate': isVisible }">
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">
-                    A selection of my recent work. From web applications to cloud services,
-                    each project represents a unique challenge and learning experience.
+                    A curated collection of professional work spanning full-stack applications, cloud infrastructure,
+                    and DevOps automation. Each project showcases problem-solving approaches and technical expertise
+                    across different domains and technology stacks.
                 </p>
             </div>
 
@@ -55,8 +56,7 @@ const toggleProjects = () => {
 
 <style scoped>
 .projects-section {
-    min-height: 100vh;
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: linear-gradient(135deg,
             rgb(15, 23, 42) 0%,
             rgb(30, 41, 59) 100%);
@@ -84,10 +84,10 @@ const toggleProjects = () => {
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-header.animate {
@@ -107,28 +107,31 @@ const toggleProjects = () => {
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -0.5rem;
+    bottom: -0.75rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: rgb(16, 185, 129);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgb(16, 185, 129) 50%,
+            transparent 100%);
     border-radius: 2px;
 }
 
 .section-subtitle {
     font-size: 1.125rem;
     color: rgb(148, 163, 184);
-    max-width: 600px;
+    max-width: 700px;
     margin: 1.5rem auto 0;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-item {
@@ -150,7 +153,7 @@ const toggleProjects = () => {
 .view-more-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .view-more-btn {
@@ -212,7 +215,7 @@ const toggleProjects = () => {
 
 @media (max-width: 768px) {
     .projects-section {
-        padding: 4rem 0;
+        padding: 1.5rem 0;
     }
 
     .container {

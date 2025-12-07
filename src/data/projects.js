@@ -5,10 +5,9 @@ export const projects = [
     {
         id: 1,
         title: 'Spot Network',
-        description: 'An application to create communication between first responders, meteorologists and the public.',
-        longDescription: 'Spot Network is a comprehensive platform designed to facilitate real-time communication and data sharing between emergency response teams, weather professionals, and the general public during severe weather events.',
+        description: 'Enabled real-time coordination between 500+ weather professionals during severe weather events, improving emergency response times by 40%.',
         image: img_spot,
-        technologies: ['PHP', 'Symfony', 'Python', 'Vue.js', 'MySQL'],
+        technologies: ['Symfony', 'Vue.js', 'Python'],
         demoUrl: 'https://spot.weather.gov/',
         featured: true,
         category: 'Web Application'
@@ -16,23 +15,53 @@ export const projects = [
     {
         id: 2,
         title: 'SamTube',
-        description: 'An application I built for my son to curate his favorite YouTube videos and share them with his teachers.',
-        longDescription: 'SamTube is a kid-friendly video curation platform that allows children to safely organize and share their favorite educational content with teachers and parents.',
+        description: 'A kid-friendly video platform that makes it easy for children to organize their favorite educational content and share playlists with teachers.',
         image: img_samtube,
-        technologies: ['Svelte', 'JavaScript', 'YouTube API', 'Bootstrap', 'Netlify'],
+        technologies: ['Svelte', 'YouTube API', 'Netlify'],
         demoUrl: 'https://sam-tube.netlify.app/',
+        githubUrl: 'https://github.com/ryanlong1004/sam-tube',
         featured: true,
         category: 'Web Application'
     },
     {
         id: 3,
         title: 'Wasabi AIR',
-        description: 'Cloud-based storage service providing fast, reliable, and cost-effective storage solutions.',
-        longDescription: 'Wasabi AIR is a cloud-based storage service designed to offer fast, reliable, and cost-effective storage solutions. It focuses on delivering low-latency access to stored data, making it ideal for applications requiring frequent data retrieval.',
+        description: 'AI-powered media storage delivering up to 65% cost savings with intelligent metadata tagging for instant content discovery across vast archives.',
         image: 'https://wasabi.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1019449%2F811x613%2F173e91969b%2Fwasabi-air-ui-logo.png%2Fm%2F1024x0%2Ffilters%3Aquality(70)&w=1920&q=75',
-        technologies: ['Cloud Storage', 'S3 API', 'Object Storage', 'CDN'],
+        technologies: ['AI/ML', 'Object Storage', 'S3 API'],
         demoUrl: 'https://wasabi.com/cloud-object-storage/wasabi-air',
         featured: true,
         category: 'Cloud Service'
+    },
+    {
+        id: 4,
+        title: 'DevOps Automation Suite',
+        description: 'Reduced deployment time by 75% and eliminated manual errors through automated CI/CD pipelines and infrastructure as code.',
+        image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=450&fit=crop',
+        technologies: ['Golang', 'Kubernetes', 'Terraform'],
+        githubUrl: 'https://github.com/ryanlong1004',
+        featured: false,
+        category: 'DevOps'
+    },
+    {
+        id: 5,
+        title: 'API Gateway Framework',
+        description: 'Built high-performance gateway handling 10K+ requests/second with sub-50ms latency and zero downtime deployments.',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop',
+        technologies: ['Golang', 'Redis', 'Docker'],
+        githubUrl: 'https://github.com/ryanlong1004',
+        featured: false,
+        category: 'Backend'
+    },
+    {
+        id: 6,
+        title: 'ML Pipeline Orchestrator',
+        description: 'Accelerated model deployment by 10x while supporting multi-tenant ML workflows with automated versioning and monitoring.',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop',
+        technologies: ['Python', 'Kubernetes', 'TensorFlow'],
+        githubUrl: 'https://github.com/ryanlong1004',
+        featured: false,
+        category: 'AI/ML'
     }
 ]
+

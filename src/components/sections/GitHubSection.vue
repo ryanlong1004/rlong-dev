@@ -90,8 +90,7 @@ const { repos, user, loading, error } = useGitHub();
 
 <style scoped>
 .github-section {
-    min-height: 700px;
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     background: linear-gradient(180deg,
             rgba(30, 41, 59, 0.98) 0%,
             rgba(15, 23, 42, 0.95) 100%);
@@ -140,14 +139,15 @@ const { repos, user, loading, error } = useGitHub();
     text-align: center;
     color: rgba(241, 245, 249, 0.7);
     font-size: 1.125rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .github-stats {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
 }
 
@@ -172,7 +172,7 @@ const { repos, user, loading, error } = useGitHub();
 }
 
 .contribution-section {
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .subsection-title {
@@ -234,7 +234,7 @@ const { repos, user, loading, error } = useGitHub();
 }
 
 .repos-section {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
 }
 
 .repos-grid {
@@ -303,7 +303,7 @@ const { repos, user, loading, error } = useGitHub();
 
 @media (max-width: 768px) {
     .github-section {
-        padding: 4rem 1.5rem;
+        padding: 3rem 1.5rem;
     }
 
     .repos-grid {
