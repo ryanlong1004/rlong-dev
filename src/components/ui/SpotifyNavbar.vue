@@ -162,7 +162,8 @@ const { currentTrack, loading, error, isPlaying } = useSpotify();
 
 @media (max-width: 768px) {
     .spotify-navbar {
-        max-width: 200px;
+        width: 100%;
+        max-width: none;
     }
 
     .track-name,
